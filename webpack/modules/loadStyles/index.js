@@ -1,6 +1,9 @@
 // Core
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+// Constants
+import { ROOT_DIR } from '../../utils/constants';
+
 // Load Styles
 export const loadStyles = env => ({
   plugins:
@@ -26,11 +29,20 @@ export const loadStyles = env => ({
           },
           {
             loader: 'css-loader',
-            options: {},
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                config: `${ROOT_DIR}/postcss.config.js`,
+              },
+            },
           },
           {
             loader: 'sass-loader',
-            options: {},
+            options: { sourceMap: true },
           },
         ],
       },
