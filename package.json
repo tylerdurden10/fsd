@@ -64,6 +64,9 @@
   "lint-staged": {
     "*.js": [
       "yarn run eslint:fix"
+    ],
+    "*.ts": [
+      "yarn run eslint:fix"
     ]
   },
   "dependencies": {
