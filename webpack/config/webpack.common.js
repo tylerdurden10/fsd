@@ -18,10 +18,10 @@ export default () =>
         main: [SRC_DIR],
       },
       resolve: {
-        extensions: ['.js', '.jsx', '.json', '.scss'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.scss'],
       },
     },
-    modules.setupHtml(env),
+    modules.setupPug(),
     modules.cleanDir(env),
     modules.loadStyles(env),
     modules.transpileCode()
